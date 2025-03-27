@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-<<<<<<< HEAD
-    dependencies:
-      pnpm:
-        specifier: ^9.4.0
-        version: 9.4.0
-=======
->>>>>>> 9a74975 (更新文檔)
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.13
@@ -1266,14 +1259,6 @@ packages:
     resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
     engines: {node: '>=10.13.0'}
 
-<<<<<<< HEAD
-  pnpm@9.4.0:
-    resolution: {integrity: sha512-9Um4pSydK4U2di+ZwHIiBe/Fr5E+d4NdvMw7CwssqefcgCK3gGLBcpHEjoh0nHDOiOtadPH6jEv14Yu0bIvYOg==}
-    engines: {node: '>=18.12'}
-    hasBin: true
-
-=======
->>>>>>> 9a74975 (更新文檔)
   postcss-load-config@5.1.0:
     resolution: {integrity: sha512-G5AJ+IX0aD0dygOE0yFZQ/huFFMSNneyfp0e3/bT05a8OfPC5FUoZRPfGijUdGOJNMewJiwzcHJXFafFzeKFVA==}
     engines: {node: '>= 18'}
@@ -2934,11 +2919,6 @@ snapshots:
 
   pngjs@5.0.0: {}
 
-<<<<<<< HEAD
-  pnpm@9.4.0: {}
-
-=======
->>>>>>> 9a74975 (更新文檔)
   postcss-load-config@5.1.0(postcss@8.4.38):
     dependencies:
       lilconfig: 3.1.1
