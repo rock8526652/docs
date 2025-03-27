@@ -49,10 +49,17 @@ export default hopeTheme({
   plugins: {
     comment: {
       provider: "Giscus",
+<<<<<<< HEAD
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
+=======
+      repo: "rock8526652/1",
+      repoId: "R_kgDONuZFsQ",
+      category: "Announcements",
+      categoryId: "DIC_kwDONuZFsc4CmRJQ",
+>>>>>>> 9a74975 (更新文檔)
     },
     components: { //https://theme-hope.vuejs.press/zh/guide/component/built-in.html#fonticon
       components: ["BiliBili","Badge", "VPCard"],
