@@ -691,6 +691,8 @@ Age is {{ $age }}.
 {{- end -}}
 ```
 
+</details>
+
 - http请求
 
 目前仅支持get / post 请求。
