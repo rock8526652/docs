@@ -664,6 +664,30 @@ Age is {{ $age }}.
 ```
 {{ $ret := if isAdmin QQ号 群号（可选） }}
 ```
+      -示例
+<details>
+  <summary>点击查看详情</summary>
+
+```
+{{- if gt (len .at_targets) 0 -}}
+  {{- $t := index .at_targets 0 -}}
+  {{- $info := member_info .group_code $t -}}
+  你@了{{- $info.name }}
+{{ $info.name }} 的性别是 {{ if eq $info.gender 2 }}男生{{ else if eq $info.gender 1 }}女生{{else}}秘密{{end}} 喵
+{{ $info.name }} 的权限是 {{ $info.permission }} 喵
+{{if (isAdmin $t) -}}
+主人！是主人φ(゜▽゜*)♪！
+{{ else -}}
+{{if (isAdmin $t .group_code) -}}
+群主人！是群主人φ(゜▽゜*)♪！
+{{ else -}}
+你谁啊？(((φ(◎ロ◎;)φ)))
+{{ end -}}
+{{ end -}}
+{{- else -}}
+请@TA使用命令喵
+{{- end -}}
+```
 
 - http请求
 
