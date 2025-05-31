@@ -784,8 +784,8 @@ Age is {{ $age }}.
 
 - #### 文本操作
 
-  <details>
-    <summary>点击查看详情</summary>
+<details>
+  <summary>点击查看详情</summary>
 
   _这里提供一些文本处理函数_
 
@@ -888,7 +888,7 @@ Age is {{ $age }}.
 - #### 文件操作
 
 <details>
-      <summary>点击查看详情</summary>
+  <summary>点击查看详情</summary>
 
   _这里提供一些基础的文件操作函数，用于读写文件（或创建外部文本数据库）_
 <br>
@@ -1130,9 +1130,9 @@ Age is {{ $age }}.
 
 </details>
 
-- ###### http请求
+- #### http请求
 
- <details>
+<details>
       <summary>点击查看详情</summary>
 
 目前仅支持get / post 请求。
