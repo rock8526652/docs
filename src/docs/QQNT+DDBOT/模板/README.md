@@ -652,48 +652,460 @@ Name is {{ $name }}.
 Age is {{ $age }}.  
 ```
 
-- 权限操作
-    - 是否管理 `isAdmin`
+---
 
-      判断该用户是否为BOT主人或群主人（ **主人并非群管理** ）。
+- #### 权限操作
 
-      *注意：此处若不提供群号，则仅判定是否为主人。*
+  - 是否管理`isAdmin`
 
-      返回值为 `bool` ，例子：
+    判断该用户是否为BOT主人或群主人（**主人并非群管理**）。
 
-```
-{{ $ret := if isAdmin QQ号 群号（可选） }}
-```
+    _注意：此处若不提供群号，则仅判定是否为主人。_
+    
+    返回值为`bool`，例子：
 
-   - 示例
-   
-<details>
-  <summary>点击查看详情</summary>
+    ```
+    {{ $ret := if isAdmin QQ号 群号（可选） }}
+    ```
 
-```
-{{- if gt (len .at_targets) 0 -}}
-  {{- $t := index .at_targets 0 -}}
-  {{- $info := member_info .group_code $t -}}
-  你@了{{- $info.name }}
-{{ $info.name }} 的性别是 {{ if eq $info.gender 2 }}男生{{ else if eq $info.gender 1 }}女生{{else}}秘密{{end}} 喵
-{{ $info.name }} 的权限是 {{ $info.permission }} 喵
-{{if (isAdmin $t) -}}
-主人！是主人φ(゜▽゜*)♪！
-{{ else -}}
-{{if (isAdmin $t .group_code) -}}
-群主人！是群主人φ(゜▽゜*)♪！
-{{ else -}}
-你谁啊？(((φ(◎ロ◎;)φ)))
-{{ end -}}
-{{ end -}}
-{{- else -}}
-请@TA使用命令喵
-{{- end -}}
-```
+  - ##### 示例
 
-</details>
+    <details>
+      <summary>点击查看详情</summary>
 
-- http请求
+    ```
+    {{- if gt (len .at_targets) 0 -}}
+      {{- $t := index .at_targets 0 -}}
+      {{- $info := member_info .group_code $t -}}
+      你@了{{- $info.name }}
+    {{ $info.name }} 的性别是 {{ if eq $info.gender 2 }}男生{{ else if eq $info.gender 1 }}女生{{else}}秘密{{end}} 喵
+    {{ $info.name }} 的权限是 {{ $info.permission }} 喵
+    {{if (isAdmin $t) -}}
+    主人！是主人φ(゜▽゜*)♪！
+    {{ else -}}
+    {{if (isAdmin $t .group_code) -}}
+    群主人！是群主人φ(゜▽゜*)♪！
+    {{ else -}}
+    你谁啊？(((φ(◎ロ◎;)φ)))
+    {{ end -}}
+    {{ end -}}
+    {{- else -}}
+    请@TA使用命令喵
+    {{- end -}}
+    ```
+
+    </details>
+
+---
+
+- #### 时间操作
+
+  - 取时间`getTime`
+  
+    该函数用于获取当前时间或指定时间的<u>日期</u>、<u>时间</u>、<u>完整时间</u>、<u>时间戳</u>。
+
+    返回值为`string`，例子：
+
+    ```
+    当前日期：
+    {{ $n := getTime "now" "dateonly" -}}
+
+    当前时间：
+    {{ $n := getTime "now" "timeonly" -}}
+
+    完整时间：
+    {{ $n := getTime "now" "datetime" -}}
+
+    特定时间戳：
+    {{ $n := getTime "now" "stamp" -}}
+
+    指定完整时间：
+    {{ $n := getTime "2022-12-31 23:59:51" "datetime" -}}
+
+    当前时间（自定义格式）：
+    {{ $n := getTime "now" "20060102" -}}
+
+    ......
+    ```
+
+  - 取时间戳`getTimeStamp`
+
+    该函数用于获取指定时间的<u>时间戳</u>。
+
+    返回值为`int64`，例子：
+
+    ```
+    {{ $n := getTimeStamp "2024-06-22 15:15:47" -}}
+    ```
+
+  - 时间戳转时间`getUnixTime`
+
+    该函数用于将<u>时间戳</u>转换为<u>日期</u>、<u>时间</u>、<u>完整时间</u>、<u>特定时间戳</u>。
+
+    返回值为`string`，例子：
+
+    ```
+    转日期：
+    {{ getUnixTime 1719040547 "dateonly" }}
+
+    转时间：
+    {{ getUnixTime 1719040547 "timeonly" }}
+
+    转完整时间：
+    {{ getUnixTime 1719040547 "datetime" }}
+
+    转特定时间戳：
+    {{ getUnixTime 1719040547 "stamp" }}
+    
+    自定义格式：
+    {{ getUnixTime 1719040547 "2006-01-02 15:04:05" }}
+    ```
+
+  - ##### 示例
+
+    <details>
+      <summary>点击查看详情</summary>
+    还没写……
+    </details>
+
+---
+
+- #### 文本操作
+
+  _这里提供一些文本处理函数_
+
+  - 替换文本`replace`
+
+    <u>替换</u>字符串中的指定内容，可指定替换<u>次数</u>。
+
+    返回值为`string`，例子：
+
+    ```
+    {{ $ret := replace "hello world" "world" "Kitty" 1 }}
+    ```
+
+  - 替换所有文本`replaceAll`
+
+    <u>替换</u>字符串中的指定内容，<u>全部</u>替换。
+
+    返回值为`string`，例子：
+
+    ```
+    {{ $ret := replaceAll "world" "Kitty" "hello world, my world, your world" }}
+    ```
+
+  - 查找第一次出现`find`
+
+    <u>查找</u>指定文本在另一文本中<u>第一次</u>出现的<u>位置</u>。
+
+    返回值为`int`，例子：
+
+    ```
+    {{ $idx := find "hello world, my world, your world" "hello" }}
+    ```
+
+  - 查找最后一次出现`findLast`
+
+    <u>查找</u>指定文本在另一文本中<u>最后一次</u>出现的<u>位置</u>。
+
+    返回值为`int`，例子：
+
+    `findLast` (str string, sub string) int
+
+    ```
+    {{ $idx := findLast "hello world, my world, your world" "hello" }}
+    ```
+
+  - 统计出现次数`count`
+
+    <u>统计</u>指定文本在另一文本中<u>出现的次数</u>。
+
+    ```
+    {{ $count := count "hello world, my world, your world" "world" }}
+    ```
+
+  - 连接文本`link`
+
+    <u>连接</u>两个字符串。
+
+    返回值为`string`，例子：
+
+    ```
+    {{ $s := link "hello" "world" }}
+    ```
+
+  - ##### 示例
+
+    <details>
+      <summary>点击查看详情</summary>
+      
+      还没写……
+
+    </details>
+
+---
+
+- #### 数组操作
+
+  - 删除文本数组成员`delStrSlice`
+
+    删除指定<u>字符串数组</u>中的<u>指定元素</u>，返回新的<u>数组</u>。
+
+    返回值为`[]string`，例子：
+
+    ```
+    {{ $ret := delStrSlice (list "hello" "world") "world" }}
+    ```
+
+  - ##### 示例
+
+    <details>
+      <summary>点击查看详情</summary>
+      还没写……
+    </details>
+
+---
+
+- #### 文件操作
+
+  _这里提供一些基础的文件操作函数，用于读写文件（或创建外部文本数据库）_
+<br>
+
+  - 读取本地文件`openFile`
+
+    **警告：该函数并不会对参数做安全检查，在任何情况下都绝对不要把用户输入作为函数参数。**
+
+    返回值为`[]byte` ，例子：
+
+    ```
+    {{ $data := openFile "path/myfile" }}
+    ```
+
+  - 读取指定行`readLine`
+
+    该函数用于读取指定文件的指定<u>行内容</u>。
+
+    返回值为`string`，例子：
+
+    ```
+    {{ $data := readLine "path/myfile" 行号 }}
+    ```
+
+  - 写入指定行`writeLine`
+
+    将内容写入指定文件的指定行（**覆盖整行**）。
+
+    返回值为`error`，例子：
+
+    ```
+    {{ $err := writeLine "path/myfile" 行号 "内容" }}
+    ```
+
+  - 覆盖写入文件`writeFile`
+
+    该函数可用于将内容<u>覆盖</u>至文件中（**会覆盖原有内容**）。
+
+    返回值为`error`，例子：
+
+    ```
+    {{ $err :=writeFile "path/myfile", "hello world" }}
+    ```
+
+  - 追加写入文件`updateFile`
+
+    该函数可用于将内容<u>追加</u>至文件末尾（**不覆盖原有内容**）。
+
+    返回值为`error`，例子：
+
+    ```
+    {{ $err := updateFile "path/myfile", "hello world\n" }} 
+    ```
+
+  - 查找并读取行`findReadLine`
+
+    该函数用于查找指定<u>关键词</u>并读取该<u>行内容</u>。
+
+    返回值为`string`，例子：
+
+    ```
+    {{ $data := findReadLine "path/myfile" "关键词" }}
+    ```
+
+  - 查找并写入行`findWriteLine`
+
+    该函数用于查找指定<u>关键词所在行</u>并写入新内容（**覆盖整行**）。
+
+    返回值为`error`，例子：
+
+    ```
+    {{ $err := findWriteLine "path/myfile" "关键词" "新内容" }}
+    ```
+
+  - ##### 示例
+
+    <details>
+      <summary>点击查看详情</summary>
+
+
+    ```
+    {{ if (and (gt (len .args) 1) (lt (len .args) 3)) -}}
+    {{ $p := "template/result.txt" -}}
+    {{ $i := int64 (index .args 0) -}}
+    {{ $c := int64 (index .args 1) -}}
+    我开始写咯，第{{ $i }}行，分数是{{ $c }}……
+    {{ $data := readLine $p $i -}}
+    {{ if nonEmpty $data -}}
+    读取到数据：{{ $data }}
+    {{- $targetStr := split "," $data -}}
+    {{- $idx := (sub (len $targetStr) 1) -}}
+    读到的长度：{{ (len $targetStr) }}
+    {{- $score := index $targetStr $idx }}
+    读到的分数：{{ $score }}
+    {{- $targetStr = delStrSlice $targetStr (index $targetStr $idx ) -}}
+    删除后长度：{{ len $targetStr }}
+    {{- $targetStr = append $targetStr $c }}
+    再加上分数：{{ $c }}
+    更新后长度：{{ len $targetStr }}
+    {{ $s := join "," $targetStr -}}
+    {{ $s = link $s "\n" -}}
+    更新后数据：{{ $s }}
+    {{ $r := writeLine $p $i $s -}}
+    {{ if empty $r -}}
+    写成功！！o(*￣▽￣*)ブ
+    {{ else -}}
+    读取失败喵~~/(ㄒoㄒ)/~~
+    {{ end -}}
+    {{ else -}}
+    出错了喵：{{ $r }}
+    {{ end -}}
+    {{ else -}}
+    参数数量不对哦~/(ㄒoㄒ)/~~
+    {{ end -}}
+    ```
+
+    </details>
+
+---
+
+- #### 积分操作
+
+  _这里提供一些积分操作函数，用于管理QQ群成员的积分（即签到积分）_
+<br>
+
+
+  - 增加积分`addScore`
+
+    <u>增加</u>指定群组中指定用户的积分（可以用于<u>创建</u>账户）。
+
+    返回值为`int64`，例子：
+
+    ```
+    {{ $score := addScore QQ号 群号 分数 }}
+    ```
+
+  - 减少积分`subScore`
+
+    <u>减少</u>指定群组中指定用户的积分。
+
+    返回值为`int64`，例子：
+
+    ```
+    {{ $score := subScore QQ号 群号 分数 }}
+    ```
+
+  - 设置积分`setScore`
+
+    <u>设置</u>指定群组中指定用户的积分（可以用于<u>创建</u>账户）。
+
+    ```
+    {{ $score := setScore QQ号 群号 分数 }}
+    ```
+
+  - 读取积分`getScore`
+
+    <u>读取</u>指定群组中指定用户的积分。
+
+    返回值为`int64`，例子：
+
+    ```
+    {{ $score := getScore QQ号 群号 }}
+    ```
+
+  - 删除账户`delAcct`
+
+    <u>删除</u>指定群组中指定用户的账户（积分清零）。
+
+    返回值为`bool`，例子：
+
+    ```
+    {{ $ret := delAcct QQ号 群号 }}
+    ```
+
+  - ##### 示例
+
+    <details>
+      <summary>点击查看详情</summary>
+
+    ```
+    {{- if gt (len .at_targets) 0 -}}
+      {{ if ne (len .args) 1 -}}
+      你要给他多少分？？？
+      {{ fin }}
+      {{- end -}}
+      {{ $add_score := index .args 0 -}}
+      {{ if lt $add_score 1 -}}
+      啊？你要给{{ $add_score }}分？
+      {{ fin }}
+      {{- end -}}
+      {{- $t := index .at_targets 0 -}}
+      {{- $info := member_info .group_code $t -}}
+      {{- $uid := $t -}}
+      {{- $gid := .group_code -}}
+      你@了{{- $info.name }}
+    {{ $info.name }} 的性别是 {{ if eq $info.gender 2 }}男生{{ else if eq $info.gender 1 }}女生{{else}}秘密{{end}} 喵
+    {{ $info.name }} 的权限是 {{ $info.permission }} 喵
+    {{- cut -}}
+    准备增加积分……
+    {{- $score := addScore $uid $gid 100 }}
+    {{- if eq $score -1 }}
+    哦豁，出错咯！
+    {{- else }}
+    你的新积分：{{ $score }}
+    {{ end }}
+    {{- cut -}}
+    读取你的积分……
+    {{- $score = getScore $uid $gid }}
+    {{- if eq $score -1 }}
+    哦豁，出错咯！
+    {{- else }}
+    你的当前积分：{{ $score }}
+    {{- end }}
+    {{ cut }}
+    设置你的积分……
+    {{- $score = setScore $uid $gid 114514 }}
+    {{- if eq $score -1 }}
+    哦豁，出错咯！
+    {{- else }}
+    你的新积分：{{ $score }}
+    {{- end }}
+    {{ cut }}
+    减少你的积分……
+    {{- $score = subScore $uid $gid 114414 }}
+    {{- if eq $score -1 }}
+    哦豁，出错咯！
+    {{- else }}
+    你的新积分：{{ $score }}
+    {{- end }}
+    {{- else -}}
+    请@TA使用命令喵
+    {{- end -}}
+    ```
+
+    </details>
+
+---
+
+- ###### http请求
 
 目前仅支持get / post 请求。
 
@@ -848,16 +1260,6 @@ cooldown函数的后续参数为设置cooldown的关键字，不同关键字的c
 {{- else -}}
 失败，正在冷却
 {{- end -}}
-```
-
-- 读取本地文件`openFile`
-
-**警告：该函数并不会对参数做安全检查，在任何情况下都绝对不要把用户输入作为函数参数。**
-
-返回值为`[]byte` ，例子：
-
-```
-{{ $data := openFile "path/myfile" }}
 ```
 
 - 强制退出当前模板`abort`
@@ -1248,29 +1650,6 @@ ACFUN-{{ .name }}直播结束了
 |-------------|--------|-------------|
 | member_code | int64  | 发送戳一戳的用户QQ号 |
 | member_name | string | 发送戳一戳的QQ昵称  |
-
-<details>
-  <summary>默认模板</summary>
-
-*该模板默认为空，即不发送消息*
-
-```text
-```
-
-</details>
-
-- bot被禁言（包含全体禁言）
-
-模板名：`trigger.group.bot_mute.tmpl`
-
-| 模板变量          | 类型     | 含义         |
-|---------------|--------|--------------|
-| group_code    | int64  | 发生禁言的群号码   |
-| group_name    | string | 发生禁言的群名称   |
-| member_code   | int64  | 被禁言的用户QQ号   |
-| member_name   | string | 被禁言的用户QQ昵称 |
-| operator_code | int64  | 操作者的用户QQ号   |
-| operator_name | string | 操作者的用户QQ昵称 |
 
 <details>
   <summary>默认模板</summary>
