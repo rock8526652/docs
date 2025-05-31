@@ -638,6 +638,9 @@ DDBOT使用五个字段的Cron表达式，这意味着最小的定时粒度为 `
 
 </details>
 
+<details>
+  <summary>点击查看详情</summary>
+	
 - json处理
 
 json处理使用 [gjson](https://github.com/tidwall/gjson) 库实现，请参考对应文档。
@@ -654,7 +657,14 @@ Age is {{ $age }}.
 
 ---
 
+<details>
+
+
+
 - #### 权限操作
+
+<details>
+  <summary>点击查看详情</summary>
 
   - 是否管理`isAdmin`
 
@@ -696,6 +706,8 @@ Age is {{ $age }}.
 
     </details>
 
+<details>
+	
 ---
 
 - #### 时间操作
