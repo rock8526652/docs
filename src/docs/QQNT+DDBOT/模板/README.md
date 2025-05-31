@@ -656,8 +656,6 @@ Age is {{ $age }}.
 ```
 
 </details>
-	
----
 
 
 - #### 权限操作
@@ -707,10 +705,11 @@ Age is {{ $age }}.
 
 </details>
 
- 
----
 
 - #### 时间操作
+
+ <details>
+      <summary>点击查看详情</summary>
 
   - 取时间`getTime`
   
@@ -780,9 +779,13 @@ Age is {{ $age }}.
     还没写……
     </details>
 
----
+</details>
+
 
 - #### 文本操作
+
+  <details>
+    <summary>点击查看详情</summary>
 
   _这里提供一些文本处理函数_
 
@@ -854,10 +857,14 @@ Age is {{ $age }}.
       还没写……
 
     </details>
+    
+</details>
 
----
 
 - #### 数组操作
+
+ <details>
+   <summary>点击查看详情</summary>
 
   - 删除文本数组成员`delStrSlice`
 
@@ -876,9 +883,12 @@ Age is {{ $age }}.
       还没写……
     </details>
 
----
+</details>
 
 - #### 文件操作
+
+<details>
+      <summary>点击查看详情</summary>
 
   _这里提供一些基础的文件操作函数，用于读写文件（或创建外部文本数据库）_
 <br>
@@ -997,9 +1007,12 @@ Age is {{ $age }}.
 
     </details>
 
----
+</details>
 
 - #### 积分操作
+
+<details>
+      <summary>点击查看详情</summary>
 
   _这里提供一些积分操作函数，用于管理QQ群成员的积分（即签到积分）_
 <br>
@@ -1115,9 +1128,12 @@ Age is {{ $age }}.
 
     </details>
 
----
+</details>
 
 - ###### http请求
+
+ <details>
+      <summary>点击查看详情</summary>
 
 目前仅支持get / post 请求。
 
@@ -1207,6 +1223,8 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
 {{- $_ := httpGet "https://httpbin.sora233.me/get" $d -}}
 请查看命令行内的详细输出
 ```
+
+</details>
 
 *以下为v1.0.9新增*
 
