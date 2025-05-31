@@ -664,7 +664,7 @@ Age is {{ $age }}.
 ```
 {{ $ret := if isAdmin QQ号 群号（可选） }}
 ```
-      -示例
+   -示例
 <details>
   <summary>点击查看详情</summary>
 
