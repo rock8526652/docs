@@ -20,6 +20,9 @@ tag:
 
 ## ②下载LiteLoaderQQNT
 - LLOnebot5.0以上版本因LL架构更新无需安装LiteLoaderQQNT辣可直接下载LLOnebot运行exe即可食用
+  
+[LLOnebot5.0 全新版本食用地址喵](https://llonebot.github.io/zh-CN/guide/getting-started)
+
 [点击我下载LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases)
 
 ![](../img/LiteLoaderQQNT.png)
