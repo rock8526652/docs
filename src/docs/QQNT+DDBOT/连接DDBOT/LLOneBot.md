@@ -18,7 +18,8 @@ tag:
 
 ![](../img/NTQQ.png)
 
-## ②下载LiteLoaderQQNT（LLonebot5.0以上版本因LL架构更新无需安装LiteLoaderQQNT辣可直接下载LLonebot运行exe即可食用）
+## ②下载LiteLoaderQQNT
+- LLOnebot5.0以上版本因LL架构更新无需安装LiteLoaderQQNT辣可直接下载LLOnebot运行exe即可食用
 [点击我下载LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases)
 
 ![](../img/LiteLoaderQQNT.png)
