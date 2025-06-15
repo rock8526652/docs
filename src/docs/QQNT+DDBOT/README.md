@@ -4,7 +4,7 @@ icon: lightbulb
 ---
 
 ## 目录
-- [前世今生](DDBOT的前世今生喵/)
+- [DDBOT的前世今生喵](DDBOT的前世今生喵/)
   -
   
 - [安装DDBOT](安装DDBOT/)
