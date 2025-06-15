@@ -16,5 +16,5 @@ actions:
     type: primary
 
   - text: 问题合集
-    link: ./issues/
+    link: ./q.md
 
