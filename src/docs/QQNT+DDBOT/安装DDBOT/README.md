@@ -19,8 +19,40 @@ tag:
   如果你不知道哪个版本适合你，推荐选择DDBOT-vX.X.X-windows-amd64.zip。
 
  ## 运行DDBOT
+ ### 1.Windows运行方法
 
 ![](../img/运行DDBOT.png)
+### 2.Linux运行方法
+```
+./DDBOT(替换为实际名称)
+```
+- 保持持久化运行
+这里使用screen进行进程持久化操作（如果系统内没有screen的软件包可以通过如下指令安装） 
+1. Ubantu
+```
+sudo apt install screen
+```
+2. CentOS
+```
+sudo yum install screen
+```
+
+- 保持持久化运行指令
+```
+screen -S ddbot
+cd  DDBOT文件目录
+./DDBOT(替换为实际名称)
+```
+- 查看持久化运行
+```
+screen -r ddbot 
+```
+- 退出持久化运行
+```
+screen -S ddbot -X quit
+```
+
+
 
  #### (先看 **连接DDBOT** 并配置) 观察黑色命令框，如果你看到命令框内有显示：
 
