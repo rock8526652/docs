@@ -2,6 +2,10 @@
 title: DDBOT的前世今生喵
 icon: fab fa-markdown
 order: 2
+category:
+  - 前世今生
+tag:
+  - 前世今生
 ---
 # ✨ 转职篇：从直播间到QQ群的奇妙冒险  
 
