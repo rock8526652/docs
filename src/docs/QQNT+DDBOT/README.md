@@ -7,9 +7,6 @@ icon: lightbulb
 - [前世今生](DDBOT的前世今生喵/)
   -
   
-- [前置准备](前置准备/)
-  -
-
 - [安装DDBOT](安装DDBOT/)
   - 
    
