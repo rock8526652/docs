@@ -23,7 +23,7 @@ tag:
   
 [LLOnebot5.0 全新版本食用地址喵](https://llonebot.github.io/zh-CN/guide/getting-started)
 
-[点击我下载LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases)
+[点击我下载LiteLoaderQQNT（现在用不上了）](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases)
 
 ![](../img/LiteLoaderQQNT.png)
 
