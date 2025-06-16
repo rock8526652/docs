@@ -8,7 +8,7 @@ tag:
   - tutorial
 ---
 
-[https://lagrangedev.github.io/Lagrange.Doc/Lagrange.OneBot/Config](https://lagrangedev.github.io/Lagrange.Doc/Lagrange.OneBot/Config)
+[https://lagrangedev.github.io/Lagrange.Doc/v1/Lagrange.OneBot/Config/](https://lagrangedev.github.io/Lagrange.Doc/v1/Lagrange.OneBot/Config)
 
 ## 连接DDBOT
 
