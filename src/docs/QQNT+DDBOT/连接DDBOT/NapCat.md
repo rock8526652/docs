@@ -8,7 +8,7 @@ tag:
   - tutorial
 ---
 
-[https://napneko.github.io/guide/start-install](https://napneko.github.io/guide/start-install)
+[https://napneko.github.io/](https://napneko.github.io/)
 
 [https://napcat.napneko.icu/](https://napcat.napneko.icu/)
 
