@@ -22,6 +22,8 @@ tag:
   - Gensokyo即官方QQ机器人框架，基于QQ官方API开发的符合onebot标准的golang实现
  
 - [使用Lagrange.OneBot](Lagrange.OneBot.md)
+
+- [使用Lagrange.OneBot.PMHQ](Lagrange.OneBot.PMHQ.md)
  
 - [使用Shamrock](Shamrock.md)
 
