@@ -17,60 +17,62 @@ tag:
 
 
 ![](../img/NTQQ.png)
-
-## ②下载LiteLoaderQQNT
-- LLOnebot5.0以上版本因LL架构更新无需安装LiteLoaderQQNT辣可直接下载LLOnebot运行exe即可食用
   
-[LLOnebot5.0 全新版本食用地址喵](https://llonebot.github.io/zh-CN/guide/getting-started)
 
-[点击我下载LiteLoaderQQNT（现在用不上了）](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases)
-
-![](../img/LiteLoaderQQNT.png)
-
-## ③安装LiteloaderQQNT
-
-  - #### 注意在安装之前请先关闭 QQ ！
-      安装成功后打开QQ的设置，看到了 LiteLoaderQQNT 就代表安装成功了.
-
-```
-require(String.raw`C:\LiteloaderQQNT`); // 此处换成你 LiteLoaderQQNT 目录位置
-require('./launcher.node').load('external_index', module);
-```
-
-![](../img/安装LiteloaderQQNT.png)
-
-## ④修补LiteloaderQQNT
-
-![](../img/修补Liteloader.png)
-
- - #### QQNTFileVerifyPatch
-
-     在 Release 下载 exe 文件，运行将弹出文件选择框，进入 QQNT 安装目录选择 QQ.exe 开始修补，每次更新都需要重新修补
-   
-     [https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/tag/Patcher_v1.0.2](https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/tag/Patcher_v1.0.2)
-
-## ⑤检查LiteloaderQQNT
-
-![](../img/检查Liteloader.png)
-
-## ⑥下载LLonebot
+## ②下载LLonebot
 [点击我下载LLonebot](https://github.com/LLOneBot/LLOneBot/releases)
 
 ![](../img/LLonebot.png)
 
-## ⑦安装LLonebot
-  - #### 下载 LLOneBot 最新版本 解压放到 plugins 目录下，然后重启 QQ 即可.
-
-![](../img/安装LLonebot.png)
+## ③安装LLonebot
+  - #### 下载 LLOneBot 最新版本
+  - [LLOnebot5.0 全新版本食用地址喵](https://llonebot.com/zh-CN/guide/getting-started)
 
 ok火速下一步
 
 
 
 ## 连接DDBOT
-
 #### 安装完成需开起反向连接并填入DDBOTws地址
+LLOneBot 配置文件在data目录里
 
+配置文件是自动生成的
+
+修改后会自动重载，无需重启 QQ 和 LLOneBot
+
+```json5
+{
+  "satori": {
+    "enable": true,  // 是否启用 Satori 协议
+    "port": 5600,  // Satori 监听端口
+    "token": "" // Satori token
+  },
+  "ob11": {
+    "enable": true, // 是否启用 OneBot 11 协议
+    "token": "", // OneBot 11 协议的 token
+    "httpPort": 3000, // HTTP 监听端口
+    "httpPostUrls": [],  // HTTP 上报地址，如 ["http://localhost:8080/onebot/v11"]
+    "httpSecret": "",  // HTTP 上报密钥
+    "wsPort": 3001, // 正向 WebSocket 监听端口
+    "wsReverseUrls": ["ws://127.0.0.1:15630/ws"], // DDBOT反向 WebSocket 地址
+    "enableHttp": true, // 是否启用 HTTP 服务
+    "enableHttpPost": true, // 是否启用 HTTP 上报
+    "enableWs": true, // 是否启用正向 WebSocket 服务
+    "enableWsReverse": true, // 是否启用反向 WebSocket 服务 这个一定要启动咩
+    "messagePostFormat": "array", // 消息上报格式，支持 "array" 或 "string"
+    "enableHttpHeart": false, // 是否启用 HTTP 心跳
+    "reportSelfMessage": true // 是否上报自己的消息
+  },
+  "heartInterval": 60000, // 心跳间隔，单位毫秒
+  "enableLocalFile2Url": false, // 是否启用本地文件转 URL 功能
+  "debug": false, // 是否启用调试模式
+  "log": true, // 是否启用日志
+  "autoDeleteFile": false, // 是否自动删除收到的文件
+  "autoDeleteFileSecond": 60, // 自动删除收到的文件的时间，单位秒
+  "musicSignUrl": "", // 音乐签名地址
+  "msgCacheExpire": 120, // 消息缓存过期时间，单位秒
+  "onlyLocalhost": true, // 是否只监听本地地址，否则监听公网地址，暴露在公网请务必设置 token
+}
 ```
-ws://127.0.0.1:15630/ws
-```
+
+
