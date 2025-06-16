@@ -29,7 +29,7 @@ export default hopeTheme({
 
       sidebar: zhSidebar,
 
-         footer: "晴风 & Alien",
+         footer: "晴风 & Alien & 小狐狸空空酱",
 
       displayFooter: true,
 
