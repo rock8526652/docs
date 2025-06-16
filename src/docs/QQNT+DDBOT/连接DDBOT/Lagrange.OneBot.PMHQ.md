@@ -14,54 +14,15 @@
 ## 关于 Lagrange 的 OneBot 配置
 
 修改 `appsettings.json` 里面的 `Implementations` 
-
-正向 ws
-```json5
-{
-  "Type": "ForwardWebSocket",
-  "Host": "127.0.0.1",
-  "Port": 8081,
-  "HeartBeatInterval": 5000,
-  "HeartBeatEnable": true,
-  "AccessToken": ""
-}
-```
-
-反向 ws
+连接DDBOT反向 ws
 ```json5
 {
   "Type": "ReverseWebSocket",
   "Host": "127.0.0.1",
-  "Port": 8080,
-  "Suffix": "/onebot/v11/ws",
+  "Port": 15630,
+  "Suffix": "/ws",
   "ReconnectInterval": 5000,
   "HeartBeatInterval": 5000,
   "AccessToken": ""
 }
-```
 
-HTTP 服务
-
-```json5
-{
-  "Type": "Http",
-  "Host": "*",
-  "Port": 8083,
-  "AccessToken": ""
-}
-```
-
-HTTP 上报
-
-```json5
-{
-  "Type": "HttpPost",
-  "Host": "127.0.0.1",
-  "Port": 8082,
-  "Suffix": "/",
-  "HeartBeatInterval": 5000,
-  "HeartBeatEnable": true,
-  "AccessToken": "",
-  "Secret": ""
-}
-```
