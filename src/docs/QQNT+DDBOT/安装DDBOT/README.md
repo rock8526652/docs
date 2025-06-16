@@ -7,7 +7,7 @@ category:
 tag:
   - tutorial
 ---
-
+# 这是故事
 # DDBOT的雨后小故事
 
 ## [DDBOT酱de小故事咩](https://ddbot.songlist.icu/docs/QQNT_DDBOT/DDBOT%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F%E5%96%B5/)
