@@ -1,5 +1,5 @@
 ---
-title: 命令指南
+title: 简易命令指南
 icon: fab fa-markdown
 order: 2
 ---
