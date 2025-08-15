@@ -53,7 +53,11 @@ export default hopeTheme({
       repoId: "R_kgDONuZFsQ",
       category: "Announcements",
       categoryId: "DIC_kwDONuZFsc4CmRJQ",
-
+    },
+    copyCode: {
+      showInMobile: true, // 手机端也显示按钮
+      duration: 2000,     // 复制成功提示时间
+      pure: false,        // 保留主题样式
     },
     components: { //https://theme-hope.vuejs.press/zh/guide/component/built-in.html#fonticon
       components: ["BiliBili","Badge", "VPCard"],
