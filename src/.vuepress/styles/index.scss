@@ -2,3 +2,16 @@
 .vp-hero-info-wrapper {
     height: 40em;
 }
+/* 强制在手机端显示复制按钮 */
+.copy-code-button {
+  display: inline-flex !important; /* 让按钮可见 */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 719px) {
+  .copy-code-button {
+    top: 0.25rem;  /* 按钮位置微调 */
+    right: 0.25rem;
+  }
+}
