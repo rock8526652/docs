@@ -74,7 +74,7 @@ Flags:
 
 `-t/--type`同理。
 
-`Arguments: <id>`表示watch命令需要一个主命令参数<id>，在例子1中为爽哥的UID`1472906636`。
+`Arguments: <id>`表示watch命令需要一个主命令参数，在例子1中为爽哥的UID`1472906636`。
 
 DDBOT的命令格式皆遵守这个规则。
 
