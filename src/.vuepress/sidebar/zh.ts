@@ -33,7 +33,13 @@ export const zhSidebar = sidebar({
               link: "连接DDBOT/"
             },
             {
-              text: "命令指南",
+              text: "简易命令指南",
+              icon: "fab fa-markdown",
+              prefix: "命令指南/",
+              link: "命令指南/"
+            },
+            {
+              text: "详细命令指南",
               icon: "fab fa-markdown",
               prefix: "命令指南/",
               link: "命令指南/"
