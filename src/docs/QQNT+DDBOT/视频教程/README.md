@@ -7,8 +7,8 @@ order: 2
 #
 
 # NapCat
-<video src="/videos/NapCat.mp4" controls width="100%"></video>
+<video src="https://videos.songlist.icu/videos/NapCat.mp4" controls width="100%"></video>
 
 
 # LLOneBot
-<video src="/videos/LLOneBot.mp4" controls width="100%"></video>
+<video src="https://videos.songlist.icu/videos/LLOneBot.mp4" controls width="100%"></video>
