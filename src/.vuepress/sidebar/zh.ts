@@ -50,6 +50,12 @@ export const zhSidebar = sidebar({
               prefix: "模板/",
               link: "模板/"
             },
+            {
+              text: "视频教程",
+              icon: "fab fa-markdown",
+              prefix: "视频教程/",
+              link: "视频教程/"
+            },
           ],
         },
         
